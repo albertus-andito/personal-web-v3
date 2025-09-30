@@ -8,7 +8,7 @@ import { remarkReadingTime } from './src/lib/remark.mjs';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://albertusandito.com
+  site: 'https://albertusandito.com',
   // base: '/personal-web-v3',
   markdown: {
     remarkPlugins: [remarkReadingTime],
