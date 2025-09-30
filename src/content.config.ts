@@ -47,9 +47,41 @@ const jobCollection = defineCollection({
     title: z.string(),
     company: z.string(),
     location: z.string(),
-    from: z.number(),
-    to: z.number().or(z.enum(['Now'])),
+    from: z.date(),
+    to: z.date().optional(),
     url: z.string(),
+  }),
+});
+
+const volunteerCollection = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/volunteer' }),
+  schema: z.object({
+    title: z.string(),
+    organisation: z.string(),
+    location: z.string(),
+    from: z.date(),
+    to: z.date().optional(),
+    url: z.string(),
+  }),
+});
+
+const educationCollection = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/education' }),
+  schema: z.object({
+    institution: z.string(),
+    title: z.string(),
+    location: z.string(),
+    from: z.date(),
+    to: z.date().optional(),
+    url: z.string(),
+  }),
+});
+
+const skillCollection = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/skills' }),
+  schema: z.object({
+    category: z.string(),
+    skills: z.array(z.string()),
   }),
 });
 
@@ -79,6 +111,9 @@ export const collections = {
   pages: pageCollection,
   links: linkCollection,
   jobs: jobCollection,
+  volunteers: volunteerCollection,
+  educations: educationCollection,
+  skills: skillCollection,
   talks: talkCollection,
   posts: postCollection,
 };

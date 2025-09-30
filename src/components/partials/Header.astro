@@ -5,6 +5,7 @@ const pathname = Astro.url.pathname;
 
 const isHomePage = pathname === '/';
 const isWritingPage = pathname.startsWith('/writing');
+const isMusicPage = pathname.startsWith('/music');
 
 ---
 
@@ -19,13 +20,20 @@ const isWritingPage = pathname.startsWith('/writing');
             isHomePage && 'text-headings bg-muted-foreground/40 rounded-full',
           ]}>Home</a>
         </li>
-        <li>
-          <a href="/writing" class:list={[
-            'font-medium transition-colors block px-5 py-2',
-            'hover:text-headings',
-            isWritingPage && 'text-headings bg-muted-foreground/40 rounded-full',
-          ]}>Writing</a>
-        </li>
+        <!--<li>-->
+        <!--  <a href="/writing" class:list={[-->
+        <!--    'font-medium transition-colors block px-5 py-2',-->
+        <!--    'hover:text-headings',-->
+        <!--    isWritingPage && 'text-headings bg-muted-foreground/40 rounded-full',-->
+        <!--  ]}>Writing</a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--  <a href="/music" class:list={[-->
+        <!--    'font-medium transition-colors block px-5 py-2',-->
+        <!--    'hover:text-headings',-->
+        <!--    isMusicPage && 'text-headings bg-muted-foreground/40 rounded-full',-->
+        <!--  ]}>Music</a>-->
+        <!--</li>-->
       </ul>
     </nav>
   </div>

@@ -3,7 +3,7 @@ import { render, type CollectionEntry } from 'astro:content';
 import { formatDateCV } from '@/lib/utils';
 
 interface Props {
-  entry: CollectionEntry<'jobs'>;
+  entry: CollectionEntry<'educations'>;
 }
 
 const { entry } = Astro.props;
@@ -18,8 +18,8 @@ const { Content } = await render(entry);
     </div>
     <div class="flex flex-col gap-3">
       <div class="flex flex-col">
-        <span class="text-headings font-medium">{entry.data.title}</span>
-        <span class="text-foreground text-sm">{entry.data.company}</span>
+        <span class="text-headings font-medium">{entry.data.institution}</span>
+        <span class="text-foreground text-sm">{entry.data.title}</span>
       </div>
       <div class="prose dark:prose-invert prose-sm">
         <Content />
