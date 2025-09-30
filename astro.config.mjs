@@ -9,7 +9,7 @@ import { remarkReadingTime } from './src/lib/remark.mjs';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://albertus-andito.github.io',
-  base: './personal-web-v3',
+  base: '/personal-web-v3',
   markdown: {
     remarkPlugins: [remarkReadingTime],
     shikiConfig: {
