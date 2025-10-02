@@ -11,6 +11,7 @@ export type AuthorInfo = {
   location?: string;
   pronouns?: string;
   linkOrder?: string[];
+  skillsCategoryOrder?: string[];
 }
 
 export type Seo = z.infer<typeof seoSchemaWithoutImage> & {
@@ -33,6 +34,7 @@ export const DEFAULT_CONFIGURATION: DefaultConfigurationType = {
     location: 'Brighton, UK',
     pronouns: 'He/Him',
     linkOrder: ['Email', 'LinkedIn', 'GitHub', 'Instagram', 'Website'],
+    skillsCategoryOrder: ['Programming Languages', 'ML & NLP', 'Web & App Development', 'Infrastructure & Tools']
   },
   seo: {
     title: 'Albertus Andito',
