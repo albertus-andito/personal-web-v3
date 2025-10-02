@@ -34,6 +34,10 @@ const volunteers = await getCollection('volunteers');
 const sortedVolunteers = sortJobsByDate(volunteers);
 
 const skills = await getCollection('skills');
+const sortedSkills = skills.sort((a, b) => {
+  const order = DEFAULT_CONFIGURATION.author?.skillsCategoryOrder || [];
+  return order.indexOf(a.data.category) - order.indexOf(b.data.category);
+})
 ---
 
 <BaseLayout seo={entry.data.seo}>
@@ -133,12 +137,12 @@ const skills = await getCollection('skills');
     )
   }
   {
-    skills.length > 0 && (
+    sortedSkills.length > 0 && (
       <Container as="section" class="py-6">
         <div class="flex flex-col gap-5">
           <span class="text-headings">Skills</span>
           <ul class="flex flex-col gap-8">
-            {skills.map((skill) => (
+            {sortedSkills.map((skill) => (
               <Skill entry={skill} />
             ))}
           </ul>
