@@ -5,6 +5,8 @@ import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { remarkReadingTime } from './src/lib/remark.mjs';
+import umami from "@yeskunall/astro-umami";
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -26,6 +28,7 @@ export default defineConfig({
       optimize: true,
       syntaxHighlight: 'shiki',
     }),
+    umami({ id: "c3522170-0795-4ffa-b7db-78cdbefc5c03" }),
   ],
   experimental: {
     fonts: [
