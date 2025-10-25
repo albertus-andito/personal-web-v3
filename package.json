@@ -16,6 +16,7 @@
     "@tailwindcss/vite": "^4.1.10",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@yeskunall/astro-umami": "^0.0.7",
     "astro": "5.13.6",
     "date-fns": "^4.1.0",
     "lucide-react": "^0.519.0",
