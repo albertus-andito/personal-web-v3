@@ -44,6 +44,6 @@ export const DEFAULT_CONFIGURATION: DefaultConfigurationType = {
     twitter: {
       creator: '@cvfolio'
     },
-    robots: 'noindex, nofollow',
+    // robots: 'noindex, nofollow',
   }
 };
